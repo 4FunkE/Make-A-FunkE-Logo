@@ -1,4 +1,4 @@
-# Make-A-FunkE-Logo
+# Make A FunkE Logo
 
 ## Description
 
