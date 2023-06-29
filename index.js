@@ -23,7 +23,7 @@ inquirer
     {
       type: 'list',
       message: 'What shape would you like for your logo:',
-      name: 'shape',
+      name: 'shapeType',
       choices: ['circle', 'triangle', 'square'],
     },
     {
@@ -33,7 +33,23 @@ inquirer
       },
   ])
 
-  
+  //generate shape from input of shape type
+  const shapeGenerate = {
+    circle: Circle,
+    triangle: Triangle,
+    square: Square,
+  };
+  //shape class will equal the shape type chosen by user from generate
+  const ShapeClass = shapeGenerate[shapeType];
+  if (!ShapeClass) {
+    console.log('Invalid shape type');
+    return;
+  }
+  //new shape
+  const shape = new ShapeClass();  
+  //add color from user input
+  shape.setColor(shapeColor);
+
 
 //error
 .catch((error) => {
