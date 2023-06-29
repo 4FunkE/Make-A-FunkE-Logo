@@ -5,20 +5,19 @@
 const { writeFile } = require("fs/promises")//to read and write files
 const inquirer = require("inquirer")//the inquiry files from packageJSON
 const { Triangle, Circle, Square} = require("./lib/shapes")//download shapes file
-const shapesTest = require("./lib/shapes.test")//download test shapes file
 
-//array of questions for user input to generate README
+//array of questions for user input to generate logo
 async function generateLogo() {
     const { text, textColor, shapeType, shapeColor } = await inquirer
   .prompt([
     {
       type: 'input',
-      message: 'Choose type up to 3 text characters for you logo.',
+      message: 'Choose 3 letters for you logo.',
       name: 'text',
     },
     {
       type: 'input',
-      message: 'Please choose one color for your logo. You can enter a name or hexadecimal number.',
+      message: 'Please choose a color for your letters. You can enter a name or hexadecimal number.',
       name: 'textColor',
     },
     {
@@ -31,21 +30,23 @@ async function generateLogo() {
         type: 'input',
         message: 'What color would you like the shape to be? You can enter a name or hexadecimal number.',
         name: 'shapeColor',
-      },
+    },
   ])
 
   //generate shape from input of shape type
-  const shapeGenerate = {
+  const shapeMap = {
     circle: Circle,
     triangle: Triangle,
     square: Square,
   };
+
   //shape class will equal the shape type chosen by user from generate
-  const ShapeClass = shapeGenerate[shapeType];
+  const ShapeClass = shapeMap[shapeType];
   if (!ShapeClass) {
     console.log('Invalid shape type');
     return;
   }
+
   //new shape
   const shape = new ShapeClass();  
   //add color from user input
@@ -57,7 +58,7 @@ async function generateLogo() {
     <text x="150" y="100" text-anchor="middle" fill="${textColor}">${text}</text>
   </svg>`;
 
-//create logo or catcherror
+//create logo or catch error
 try {
     await writeFile('logo.svg', svg);
     console.log('Generated logo.svg');
