@@ -50,6 +50,11 @@ inquirer
   //add color from user input
   shape.setColor(shapeColor);
 
+//parameters of svg plus text svg
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    ${shape.render()}
+    <text x="150" y="100" text-anchor="middle" fill="${textColor}">${text}</text>
+  </svg>`;
 
 //error
 .catch((error) => {
