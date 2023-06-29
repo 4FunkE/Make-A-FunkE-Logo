@@ -56,7 +56,10 @@ inquirer
     <text x="150" y="100" text-anchor="middle" fill="${textColor}">${text}</text>
   </svg>`;
 
-//error
-.catch((error) => {
-    console.error(error);
-});
+//create logo or catcherror
+try {
+    await writeFile('logo.svg', svg);
+    console.log('Generated logo.svg');
+  } catch (error) {
+    console.error('Error while generating logo:', error);
+  }
