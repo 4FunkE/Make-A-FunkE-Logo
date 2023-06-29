@@ -4,7 +4,7 @@
 // Packages needed for this application
 const { writeFile } = require("fs/promises")//to read and write files
 const inquirer = require("inquirer")//the inquiry files from packageJSON
-const { Traingle, Circle, Square} = require("./lib/shapes")//download shapes file
+const { Triangle, Circle, Square} = require("./lib/shapes")//download shapes file
 const shapesTest = require("./lib/shapes.test")//download test shapes file
 
 //array of questions for user input to generate README
