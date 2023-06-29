@@ -1,3 +1,6 @@
+//if i want to change colores of my console log
+//console.log(`\x1b[36m${text}\x1b[0m`);
+
 // Packages needed for this application
 const fs = require("fs")//to read and write files
 const inquirer = require("inquirer")//the inquiry files from packageJSON
