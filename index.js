@@ -32,15 +32,9 @@ inquirer
         name: 'shapeColor',
       },
   ])
-//to move answers to generate
-  .then((answers) => {
-    const logoContent = shapes(answers);
-//write README file
-    fs.writeFile("logo.svg", logoContent, (err) => {
-        if (err) throw err;
-        console.log("You successfully created a logo!")
-    });
-})
+
+  
+
 //error
 .catch((error) => {
     console.error(error);
