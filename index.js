@@ -8,7 +8,8 @@ const { Triangle, Circle, Square} = require("./lib/shapes")//download shapes fil
 const shapesTest = require("./lib/shapes.test")//download test shapes file
 
 //array of questions for user input to generate README
-inquirer
+async function generateLogo() {
+    const { text, textColor, shapeType, shapeColor } = await inquirer
   .prompt([
     {
       type: 'input',
@@ -61,5 +62,8 @@ try {
     await writeFile('logo.svg', svg);
     console.log('Generated logo.svg');
   } catch (error) {
-    console.error('Error while generating logo:', error);
+    console.error('Error while generating logo:', `\x1b[36m${error}\x1b[0m`);
   }
+}
+
+generateLogo();
