@@ -14,15 +14,13 @@ I am motivated as a designer to create this application to make it easier for us
 ## Installation
 
 For users to use this application they would have to enter the integrated terminal of the index.js file connected to the "Make-A-FunkE-Logo" repo. 
-- Live Video -->
+- Live Video --> https://drive.google.com/file/d/1xMz8emwvcY_iMejW15LJNOEgtDO1w4QV/view 
 
 ## Usage
 
 Users will be prompted with numerous questions about characters, colors and shapes they would like for a logo idea. After they complete the questions a logo will be generated.
 
-```md
-![alt text](/Make-A-FunkE-Logo/examples/try1.svg)
-```
+![alt text](./examples/try1.svg)
 
 ## Credits
 
